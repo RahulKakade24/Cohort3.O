@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+/* Enable manual .dark class selector support in Tailwind v4 */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg-main: #ffffff;
+  --bg-card: #f9fafb;
+  --text-main: #111827;
+  --text-muted: #4b5563;
+  --border-color: #e5e7eb;
+}
+
+.dark {
+  --bg-main: #121418;       /* Deep, soft eye-protecting matte charcoal */
+  --bg-card: #191c21;       /* Subtle card contrast */
+  --text-main: #e1e4ed;     /* Soft warm white (not glaringly bright) for headings */
+  --text-muted: #9ba1b0;    /* Gentle muted gray for low eye strain on text */
+  --border-color: #262b35;  /* Soft, non-intrusive border color */
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-muted); /* Soft eye-friendly tone for all default text */
+  font-family: inherit;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Eye-friendly headings */
+.dark h1, 
+.dark h2, 
+.dark h3, 
+.dark h4, 
+.dark h5, 
+.dark h6 {
+  color: var(--text-main);
+}
+
+/* Eye-friendly table data and headers */
+.dark td, 
+.dark th {
+  color: var(--text-muted);
+  border-color: var(--border-color);
+}
+
+.dark th {
+  color: var(--text-main);
+}
